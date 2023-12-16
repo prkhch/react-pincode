@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { Pincode } from "./lib/Pincode";
 
 function App() {
+  const onComplete = ({ inputValue }) => {
+    console.log(inputValue);
+    if (inputValue === "1234") {
+      console.log("맞음");
+    } else {
+      console.log("틀림");
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Pincode onComplete={onComplete} />
     </div>
   );
 }
