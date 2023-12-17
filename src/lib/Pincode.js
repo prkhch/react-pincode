@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
+import "./style.css";
 
 const MAX_LENGTH = 6;
 
-export const Pincode = ({ onComplete }) => {
+export const Pincode = ({ onComplete, randomKeypad, styleBottomLayout }) => {
   // error message
 
   // keypad map
@@ -35,6 +36,7 @@ export const Pincode = ({ onComplete }) => {
   // reset inputValue
   const resetInputValue = () => {
     setInputValue("");
+    if (randomKeypad) handleRandomKeypad();
   };
 
   // on complete
@@ -64,23 +66,66 @@ export const Pincode = ({ onComplete }) => {
     setKeypadMap(newKeypadMap);
   };
 
+  // randomKeypad == true
+  useEffect(() => {
+    if (randomKeypad) {
+      handleRandomKeypad();
+    }
+  }, []);
+
   // style
 
   return (
-    <div>
-      <div onClick={() => pushNumber(keypadMap["one"])}>{keypadMap["one"]}</div>
-      <div onClick={() => pushNumber(keypadMap["two"])}>{keypadMap["two"]}</div>
-      <div onClick={() => pushNumber(keypadMap["three"])}>{keypadMap["three"]}</div>
-      <div onClick={() => pushNumber(keypadMap["four"])}>{keypadMap["four"]}</div>
-      <div onClick={() => pushNumber(keypadMap["five"])}>{keypadMap["five"]}</div>
-      <div onClick={() => pushNumber(keypadMap["six"])}>{keypadMap["six"]}</div>
-      <div onClick={() => pushNumber(keypadMap["seven"])}>{keypadMap["seven"]}</div>
-      <div onClick={() => pushNumber(keypadMap["eight"])}>{keypadMap["eight"]}</div>
-      <div onClick={() => pushNumber(keypadMap["nine"])}>{keypadMap["nine"]}</div>
-      <div onClick={() => resetInputValue()}>@</div>
-      <div onClick={() => pushNumber(keypadMap["zero"])}>{keypadMap["zero"]}</div>
-      <div onClick={() => popNumber()}>x</div>
-      <div onClick={() => handleRandomKeypad()}>랜덤 배치</div>
+    <div className="container">
+      <div className="inputBox">{inputValue}</div>
+
+      <div className="keypadBox">
+        {!styleBottomLayout && (
+          <>
+            <div className="keypadRow">
+              <div onClick={() => pushNumber(keypadMap["one"])}>{keypadMap["one"]}</div>
+              <div onClick={() => pushNumber(keypadMap["two"])}>{keypadMap["two"]}</div>
+              <div onClick={() => pushNumber(keypadMap["three"])}>{keypadMap["three"]}</div>
+            </div>
+            <div className="keypadRow">
+              <div onClick={() => pushNumber(keypadMap["four"])}>{keypadMap["four"]}</div>
+              <div onClick={() => pushNumber(keypadMap["five"])}>{keypadMap["five"]}</div>
+              <div onClick={() => pushNumber(keypadMap["six"])}>{keypadMap["six"]}</div>
+            </div>
+            <div className="keypadRow">
+              <div onClick={() => pushNumber(keypadMap["seven"])}>{keypadMap["seven"]}</div>
+              <div onClick={() => pushNumber(keypadMap["eight"])}>{keypadMap["eight"]}</div>
+              <div onClick={() => pushNumber(keypadMap["nine"])}>{keypadMap["nine"]}</div>
+            </div>
+            <div className="keypadRow">
+              <div onClick={() => resetInputValue()}>0</div>
+              <div onClick={() => pushNumber(keypadMap["zero"])}>{keypadMap["zero"]}</div>
+              <div onClick={() => popNumber()}>0</div>
+            </div>
+          </>
+        )}
+
+        {styleBottomLayout && (
+          <>
+            <div className="keypadRow">
+              <div onClick={() => pushNumber(keypadMap["one"])}>{keypadMap["one"]}</div>
+              <div onClick={() => pushNumber(keypadMap["two"])}>{keypadMap["two"]}</div>
+              <div onClick={() => pushNumber(keypadMap["three"])}>{keypadMap["three"]}</div>
+              <div onClick={() => pushNumber(keypadMap["four"])}>{keypadMap["four"]}</div>
+              <div onClick={() => pushNumber(keypadMap["five"])}>{keypadMap["five"]}</div>
+              <div onClick={() => resetInputValue()}>0</div>
+            </div>
+            <div className="keypadRow">
+              <div onClick={() => pushNumber(keypadMap["six"])}>{keypadMap["six"]}</div>
+              <div onClick={() => pushNumber(keypadMap["seven"])}>{keypadMap["seven"]}</div>
+              <div onClick={() => pushNumber(keypadMap["eight"])}>{keypadMap["eight"]}</div>
+              <div onClick={() => pushNumber(keypadMap["nine"])}>{keypadMap["nine"]}</div>
+              <div onClick={() => pushNumber(keypadMap["zero"])}>{keypadMap["zero"]}</div>
+              <div onClick={() => popNumber()}>0</div>
+            </div>
+          </>
+        )}
+      </div>
     </div>
   );
 };

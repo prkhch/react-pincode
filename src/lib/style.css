@@ -1,0 +1,31 @@
+.container {
+  
+}
+
+.keypadBox {
+  border: 1px dashed red;
+  display: flex;
+  flex-direction: column;
+}
+
+.keypadRow {
+  border: 1px solid blueviolet;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+}
+
+.keypadItem {
+  border: 1px solid yellow;
+}
+
+.errorBox {
+  border: 1px solid red;
+}
+
+.inputBox {
+  border: 1px solid blue;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
