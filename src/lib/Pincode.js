@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
 
-const MAX_LENGTH = 6;
-
-export const Pincode = ({ onComplete, randomKeypad, styleBottomLayout }) => {
+export const Pincode = ({ onComplete, randomKeypad, maxLength, styleBottomLayout }) => {
+  const maxLengthValue = maxLength ? Math.min(maxLength, 8) : 4;
   // error message
 
   // keypad map
@@ -42,8 +41,10 @@ export const Pincode = ({ onComplete, randomKeypad, styleBottomLayout }) => {
   // on complete
   useEffect(() => {
     // 핀코드가 MAX_LENGTH에 도달했는지 확인
-    console.log(inputValue);
-    onComplete({ inputValue: inputValue });
+    if (inputValue.length === maxLengthValue) {
+      onComplete({ inputValue: inputValue });
+      resetInputValue();
+    }
   }, [inputValue]);
 
   // Fishcer-Yates shuffle
