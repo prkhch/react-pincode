@@ -1,6 +1,6 @@
 {
   "name": "@prkhch/react-pincode",
-  "version": "0.0.2",
+  "version": "0.0.32",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -44,5 +44,18 @@
       "@babel/preset-env",
       "@babel/preset-react"
     ]
-  }
+  },
+  
+  "keywords" : [
+    "react", "pincode", "javascript"
+  ],
+  "repository" : {
+    "type": "git",
+      "url" : "git://github.com/prkhch/react-pincode.git"
+  },
+  "author" : {
+    "name" : "prkhch",
+    "email" : "shjc4623@gmail.com"
+  },
+  "contributors" : ["prkhch"]
 }

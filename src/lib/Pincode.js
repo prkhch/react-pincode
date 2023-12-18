@@ -13,7 +13,7 @@ import SEVEN_ICON from "./icons/SEVEN_ICON.svg";
 import EIGHT_ICON from "./icons/EIGHT_ICON.svg";
 import NINE_ICON from "./icons/NINE_ICON.svg";
 
-export const Pincode = ({ onComplete, randomKeypad, maxLength, styleBottomLayout }) => {
+const Pincode = ({ onComplete, randomKeypad, maxLength, styleBottomLayout }) => {
   const maxLengthValue = maxLength ? Math.min(maxLength, 8) : 4;
   // error message
 
@@ -205,3 +205,5 @@ export const Pincode = ({ onComplete, randomKeypad, maxLength, styleBottomLayout
     </div>
   );
 };
+
+export default Pincode;
