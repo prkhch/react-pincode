@@ -1,5 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
+import RESET_ICON from "./icons/RESET_ICON.svg";
+import DELETE_ICON from "./icons/DELETE_ICON.svg";
+import ZERO_ICON from "./icons/ZERO_ICON.svg";
+import ONE_ICON from "./icons/ONE_ICON.svg";
+import TWO_ICON from "./icons/TWO_ICON.svg";
+import THREE_ICON from "./icons/THREE_ICON.svg";
+import FOUR_ICON from "./icons/FOUR_ICON.svg";
+import FIVE_ICON from "./icons/FIVE_ICON.svg";
+import SIX_ICON from "./icons/SIX_ICON.svg";
+import SEVEN_ICON from "./icons/SEVEN_ICON.svg";
+import EIGHT_ICON from "./icons/EIGHT_ICON.svg";
+import NINE_ICON from "./icons/NINE_ICON.svg";
 
 export const Pincode = ({ onComplete, randomKeypad, maxLength, styleBottomLayout }) => {
   const maxLengthValue = maxLength ? Math.min(maxLength, 8) : 4;
@@ -7,16 +19,16 @@ export const Pincode = ({ onComplete, randomKeypad, maxLength, styleBottomLayout
 
   // keypad map
   const [keypadMap, setKeypadMap] = useState({
-    zero: 0,
-    one: 1,
-    two: 2,
-    three: 3,
-    four: 4,
-    five: 5,
-    six: 6,
-    seven: 7,
-    eight: 8,
-    nine: 9,
+    zero: { value: 0, icon: ZERO_ICON },
+    one: { value: 1, icon: ONE_ICON },
+    two: { value: 2, icon: TWO_ICON },
+    three: { value: 3, icon: THREE_ICON },
+    four: { value: 4, icon: FOUR_ICON },
+    five: { value: 5, icon: FIVE_ICON },
+    six: { value: 6, icon: SIX_ICON },
+    seven: { value: 7, icon: SEVEN_ICON },
+    eight: { value: 8, icon: EIGHT_ICON },
+    nine: { value: 9, icon: NINE_ICON },
   });
 
   // input value
@@ -56,13 +68,26 @@ export const Pincode = ({ onComplete, randomKeypad, maxLength, styleBottomLayout
   }
 
   // randomKeypad
-  let randomArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  // let randomArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  let randomArray = [
+    { value: 0, icon: ZERO_ICON },
+    { value: 1, icon: ONE_ICON },
+    { value: 2, icon: TWO_ICON },
+    { value: 3, icon: THREE_ICON },
+    { value: 4, icon: FOUR_ICON },
+    { value: 5, icon: FIVE_ICON },
+    { value: 6, icon: SIX_ICON },
+    { value: 7, icon: SEVEN_ICON },
+    { value: 8, icon: EIGHT_ICON },
+    { value: 9, icon: NINE_ICON },
+  ];
   const keysArray = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
   const handleRandomKeypad = () => {
     shuffle(randomArray);
-    const newKeypadMap = {};
+    const newKeypadMap = { ...keypadMap };
     keysArray.forEach((key, index) => {
-      newKeypadMap[key] = randomArray[index];
+      newKeypadMap[key].value = randomArray[index].value;
+      newKeypadMap[key].icon = randomArray[index].icon;
     });
     setKeypadMap(newKeypadMap);
   };
@@ -78,30 +103,56 @@ export const Pincode = ({ onComplete, randomKeypad, maxLength, styleBottomLayout
 
   return (
     <div className="container">
-      <div className="inputBox">{inputValue}</div>
+      <div className={styleBottomLayout ? "inputBoxBottom" : "inputBox"}>
+        {inputValue ? "*".repeat(inputValue.length) + "□".repeat(maxLength - inputValue.length) : "□".repeat(maxLength)}
+      </div>
 
       <div className="keypadBox">
         {!styleBottomLayout && (
           <>
             <div className="keypadRow">
-              <div onClick={() => pushNumber(keypadMap["one"])}>{keypadMap["one"]}</div>
-              <div onClick={() => pushNumber(keypadMap["two"])}>{keypadMap["two"]}</div>
-              <div onClick={() => pushNumber(keypadMap["three"])}>{keypadMap["three"]}</div>
+              <div className="keypadItem" onClick={() => pushNumber(keypadMap["one"].value)}>
+                <img src={keypadMap["one"].icon} alt="One" />
+              </div>
+              <div className="keypadItem" onClick={() => pushNumber(keypadMap["two"].value)}>
+                <img src={keypadMap["two"].icon} alt="Two" />
+              </div>
+              <div className="keypadItem" onClick={() => pushNumber(keypadMap["three"].value)}>
+                <img src={keypadMap["three"].icon} alt="Three" />
+              </div>
             </div>
             <div className="keypadRow">
-              <div onClick={() => pushNumber(keypadMap["four"])}>{keypadMap["four"]}</div>
-              <div onClick={() => pushNumber(keypadMap["five"])}>{keypadMap["five"]}</div>
-              <div onClick={() => pushNumber(keypadMap["six"])}>{keypadMap["six"]}</div>
+              <div className="keypadItem" onClick={() => pushNumber(keypadMap["four"].value)}>
+                <img src={keypadMap["four"].icon} alt="Four" />
+              </div>
+              <div className="keypadItem" onClick={() => pushNumber(keypadMap["five"].value)}>
+                <img src={keypadMap["five"].icon} alt="Five" />
+              </div>
+              <div className="keypadItem" onClick={() => pushNumber(keypadMap["six"].value)}>
+                <img src={keypadMap["six"].icon} alt="Six" />
+              </div>
             </div>
             <div className="keypadRow">
-              <div onClick={() => pushNumber(keypadMap["seven"])}>{keypadMap["seven"]}</div>
-              <div onClick={() => pushNumber(keypadMap["eight"])}>{keypadMap["eight"]}</div>
-              <div onClick={() => pushNumber(keypadMap["nine"])}>{keypadMap["nine"]}</div>
+              <div className="keypadItem" onClick={() => pushNumber(keypadMap["seven"].value)}>
+                <img src={keypadMap["seven"].icon} alt="Seven" />
+              </div>
+              <div className="keypadItem" onClick={() => pushNumber(keypadMap["eight"].value)}>
+                <img src={keypadMap["eight"].icon} alt="Eight" />
+              </div>
+              <div className="keypadItem" onClick={() => pushNumber(keypadMap["nine"].value)}>
+                <img src={keypadMap["nine"].icon} alt="Nine" />
+              </div>
             </div>
             <div className="keypadRow">
-              <div onClick={() => resetInputValue()}>0</div>
-              <div onClick={() => pushNumber(keypadMap["zero"])}>{keypadMap["zero"]}</div>
-              <div onClick={() => popNumber()}>0</div>
+              <div className="keypadItem" onClick={() => resetInputValue()}>
+                <img src={RESET_ICON} alt="Reset" />
+              </div>
+              <div className="keypadItem" onClick={() => pushNumber(keypadMap["zero"].value)}>
+                <img src={keypadMap["zero"].icon} alt="Zero" />
+              </div>
+              <div className="keypadItem" onClick={() => popNumber()}>
+                <img src={DELETE_ICON} alt="Delete" />
+              </div>
             </div>
           </>
         )}
@@ -109,20 +160,44 @@ export const Pincode = ({ onComplete, randomKeypad, maxLength, styleBottomLayout
         {styleBottomLayout && (
           <>
             <div className="keypadRow">
-              <div onClick={() => pushNumber(keypadMap["one"])}>{keypadMap["one"]}</div>
-              <div onClick={() => pushNumber(keypadMap["two"])}>{keypadMap["two"]}</div>
-              <div onClick={() => pushNumber(keypadMap["three"])}>{keypadMap["three"]}</div>
-              <div onClick={() => pushNumber(keypadMap["four"])}>{keypadMap["four"]}</div>
-              <div onClick={() => pushNumber(keypadMap["five"])}>{keypadMap["five"]}</div>
-              <div onClick={() => resetInputValue()}>0</div>
+              <div className="keypadItem" onClick={() => pushNumber(keypadMap["one"].value)}>
+                <img src={keypadMap["one"].icon} alt="One" />
+              </div>
+              <div className="keypadItem" onClick={() => pushNumber(keypadMap["two"].value)}>
+                <img src={keypadMap["two"].icon} alt="Two" />
+              </div>
+              <div className="keypadItem" onClick={() => pushNumber(keypadMap["three"].value)}>
+                <img src={keypadMap["three"].icon} alt="Three" />
+              </div>
+              <div className="keypadItem" onClick={() => pushNumber(keypadMap["four"].value)}>
+                <img src={keypadMap["four"].icon} alt="Four" />
+              </div>
+              <div className="keypadItem" onClick={() => pushNumber(keypadMap["five"].value)}>
+                <img src={keypadMap["five"].icon} alt="Five" />
+              </div>
+              <div className="keypadItem" onClick={() => resetInputValue()}>
+                <img src={RESET_ICON} alt="Reset" />
+              </div>
             </div>
             <div className="keypadRow">
-              <div onClick={() => pushNumber(keypadMap["six"])}>{keypadMap["six"]}</div>
-              <div onClick={() => pushNumber(keypadMap["seven"])}>{keypadMap["seven"]}</div>
-              <div onClick={() => pushNumber(keypadMap["eight"])}>{keypadMap["eight"]}</div>
-              <div onClick={() => pushNumber(keypadMap["nine"])}>{keypadMap["nine"]}</div>
-              <div onClick={() => pushNumber(keypadMap["zero"])}>{keypadMap["zero"]}</div>
-              <div onClick={() => popNumber()}>0</div>
+              <div className="keypadItem" onClick={() => pushNumber(keypadMap["six"].value)}>
+                <img src={keypadMap["six"].icon} alt="Six" />
+              </div>
+              <div className="keypadItem" onClick={() => pushNumber(keypadMap["seven"].value)}>
+                <img src={keypadMap["seven"].icon} alt="Seven" />
+              </div>
+              <div className="keypadItem" onClick={() => pushNumber(keypadMap["eight"].value)}>
+                <img src={keypadMap["eight"].icon} alt="Eight" />
+              </div>
+              <div className="keypadItem" onClick={() => pushNumber(keypadMap["nine"].value)}>
+                <img src={keypadMap["nine"].icon} alt="Nine" />
+              </div>
+              <div className="keypadItem" onClick={() => pushNumber(keypadMap["zero"].value)}>
+                <img src={keypadMap["zero"].icon} alt="Zero" />
+              </div>
+              <div className="keypadItem" onClick={() => popNumber()}>
+                <img src={DELETE_ICON} alt="Delete" />
+              </div>
             </div>
           </>
         )}
