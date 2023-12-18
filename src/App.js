@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div>
-      <Pincode onComplete={onComplete} randomKeypad={false} styleBottomLayout={false} maxLength={6} />
+      <Pincode onComplete={onComplete} randomKeypad={true} styleBottomLayout={false} maxLength={6} />
     </div>
   );
 }
