@@ -1,4 +1,4 @@
-import { Pincode } from "./lib/Pincode";
+import Pincode from "./lib/Pincode";
 
 function App() {
   const onComplete = ({ inputValue }) => {

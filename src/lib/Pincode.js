@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
+import CIRCLE_ICON from "./icons/CIRCLE_ICON.svg";
+import CIRCLE_ICON_FILL from "./icons/CIRCLE_ICON_FILL.svg";
 import RESET_ICON from "./icons/RESET_ICON.svg";
 import DELETE_ICON from "./icons/DELETE_ICON.svg";
 import ZERO_ICON from "./icons/ZERO_ICON.svg";
@@ -16,6 +18,8 @@ import NINE_ICON from "./icons/NINE_ICON.svg";
 const Pincode = ({ onComplete, randomKeypad, maxLength, styleBottomLayout }) => {
   const maxLengthValue = maxLength ? Math.min(maxLength, 8) : 4;
   // error message
+  const [message, setMessage] = useState("Enter Pincode");
+  const [errorMessage, setErrorMessage] = useState("Incorrect");
 
   // keypad map
   const [keypadMap, setKeypadMap] = useState({
@@ -101,10 +105,18 @@ const Pincode = ({ onComplete, randomKeypad, maxLength, styleBottomLayout }) => 
 
   // style
 
+  const circle_empty_arr = [...Array(maxLength - inputValue.length)];
+  const circle_fill_arr = [...Array(inputValue.length)];
+
   return (
     <div className="container">
       <div className={styleBottomLayout ? "inputBoxBottom" : "inputBox"}>
-        {inputValue ? "*".repeat(inputValue.length) + "□".repeat(maxLength - inputValue.length) : "□".repeat(maxLength)}
+        {circle_fill_arr.map((_, idx) => (
+          <img key={idx} src={CIRCLE_ICON_FILL} alt="CircleFill" className="circleFadeIn" />
+        ))}
+        {circle_empty_arr.map((_, idx) => (
+          <img key={idx} src={CIRCLE_ICON} alt="Circle" />
+        ))}
       </div>
 
       <div className="keypadBox">
