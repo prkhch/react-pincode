@@ -32,11 +32,10 @@
 }
 
 .errorBox {
-  border: 1px solid red;
+  color:red;
 }
 
 .inputBox {
-  border: 1px solid blue;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,7 +44,6 @@
 }
 
 .inputBoxBottom {
-  border: 1px solid blue;
   display: flex;
   justify-content: center;
   align-items: center;
