@@ -1,8 +1,12 @@
 import Pincode from "./lib/Pincode";
 
 function App() {
-  const onComplete = ({ inputValue }) => {
+  const onComplete = ({ inputValue, setMessage }) => {
     console.log(inputValue);
+
+    if (inputValue !== "000000") {
+      setMessage("Incorrect Pincode");
+    }
   };
 
   return (
