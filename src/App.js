@@ -6,13 +6,13 @@ function App() {
     console.log(inputValue);
 
     if (inputValue === "000000") {
-      setMessage("Correct Pincode!");
+      setMessage("성공");
       setErrorMessage("");
     }
 
     if (inputValue !== "000000") {
       setMessage("");
-      setErrorMessage("Incorrect Pincode!");
+      setErrorMessage("잘못된 입력!");
     }
   };
 
@@ -20,16 +20,17 @@ function App() {
     <div>
       <Pincode
         onComplete={onComplete}
-        randomKeypad={false}
+        randomKeypad={true}
         maxLength={6}
-        defaultMessage="Enter Pincode~"
+        defaultMessage="암호 입력"
         styleBottomLayout={true}
-        styleMessageColor="#4F86C6"
-        styleErrorMessageColor="#D81159"
-        styleInputCircleColor="#4F86C6"
-        styleNumberButtonColor="#4F86C6"
-        styleResetButtonColor="#4F86C6"
-        styleDeleteButtonColor="#4F86C6"
+        styleBackgroundColor="#f8f9fa"
+        styleMessageColor="#0d6efd"
+        styleErrorMessageColor="#dc3545"
+        styleInputCircleColor="#0d6efd"
+        styleNumberButtonColor="#0d6efd"
+        styleResetButtonColor="#0d6efd"
+        styleDeleteButtonColor="#0d6efd"
       />
     </div>
   );

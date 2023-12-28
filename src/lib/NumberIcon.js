@@ -1,10 +1,4 @@
 import React from "react";
-import "./style.css";
-import { ReactComponent as CIRCLE_ICON } from "./icons/CIRCLE_ICON.svg";
-import { ReactComponent as CIRCLE_ICON_FILL } from "./icons/CIRCLE_ICON_FILL.svg";
-import { ReactComponent as MINIMIZE_ICON } from "./icons/MINIMIZE_ICON.svg";
-import { ReactComponent as RESET_ICON } from "./icons/RESET_ICON.svg";
-import { ReactComponent as DELETE_ICON } from "./icons/DELETE_ICON.svg";
 import { ReactComponent as ZERO_ICON } from "./icons/ZERO_ICON.svg";
 import { ReactComponent as ONE_ICON } from "./icons/ONE_ICON.svg";
 import { ReactComponent as TWO_ICON } from "./icons/TWO_ICON.svg";

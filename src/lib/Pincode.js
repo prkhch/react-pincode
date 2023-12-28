@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
-import CIRCLE_ICON from "./icons/CIRCLE_ICON.svg";
-import CIRCLE_ICON_FILL from "./icons/CIRCLE_ICON_FILL.svg";
 import MINIMIZE_ICON from "./icons/MINIMIZE_ICON.svg";
 import NumberIcon from "./NumberIcon";
 import ResetIcon from "./ResetIcon";
@@ -14,6 +12,7 @@ const Pincode = ({
   maxLength,
   defaultMessage,
   styleBottomLayout,
+  styleBackgroundColor,
   styleMessageColor,
   styleErrorMessageColor,
   styleInputCircleColor,
@@ -52,6 +51,8 @@ const Pincode = ({
   // push number
   const pushNumber = (number) => {
     setInputValue((prev) => prev + number);
+    setErrorMessage("");
+    setMessage(defaultMessage);
   };
 
   // pop number
@@ -76,6 +77,7 @@ const Pincode = ({
       });
       resetInputValue();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inputValue]);
 
   // Fishcer-Yates shuffle
@@ -127,30 +129,41 @@ const Pincode = ({
     if (randomKeypad) {
       handleRandomKeypad();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const circle_empty_arr = [...Array(maxLengthValue - inputValue.length)];
   const circle_fill_arr = [...Array(inputValue.length)];
 
   return (
-    <div className="container">
+    <div
+      className="container fadeIn"
+      style={{ backgroundColor: styleBackgroundColor }}
+    >
       {!errorMessage && (
-        <div className="" style={{ color: styleMessageColor }}>
+        <div className="messageBox fadeIn" style={{ color: styleMessageColor }}>
           {message}
         </div>
       )}
       {errorMessage && (
-        <div className="errorBox" style={{ color: styleErrorMessageColor }}>
+        <div
+          className="errorBox shake fadeIn"
+          style={{ color: styleErrorMessageColor }}
+        >
           {errorMessage}
         </div>
       )}
 
-      <div className={styleBottomLayout ? "inputBoxBottom" : "inputBox"}>
+      <div className={styleBottomLayout ? "inputBox bottom" : "inputBox"}>
         {circle_fill_arr.map((_, idx) => (
-          <CircleIcon className="" iconColor={styleInputCircleColor} />
+          <CircleIcon
+            key={idx}
+            className=""
+            iconColor={styleInputCircleColor}
+          />
         ))}
         {circle_empty_arr.map((_, idx) => (
-          <img key={idx} src={MINIMIZE_ICON} alt="Circle" />
+          <img key={idx} src={MINIMIZE_ICON} alt="Circle" className="" />
         ))}
       </div>
 
@@ -158,69 +171,96 @@ const Pincode = ({
         {!styleBottomLayout && (
           <>
             <div className="keypadRow">
-              <div className="keypadItem">
+              <div
+                className="keypadItem"
+                onClick={() => pushNumber(keypadMap["one"].value)}
+              >
                 <NumberIcon
-                  pushNumber={() => pushNumber(keypadMap["one"].value)}
+                  pushNumber={() => {}}
                   value={keypadMap["one"].value}
                   numberButtonColor={styleNumberButtonColor}
                 />
               </div>
-              <div className="keypadItem">
+              <div
+                className="keypadItem"
+                onClick={() => pushNumber(keypadMap["two"].value)}
+              >
                 <NumberIcon
-                  pushNumber={() => pushNumber(keypadMap["two"].value)}
+                  pushNumber={() => {}}
                   value={keypadMap["two"].value}
                   numberButtonColor={styleNumberButtonColor}
                 />
               </div>
-              <div className="keypadItem">
+              <div
+                className="keypadItem"
+                onClick={() => pushNumber(keypadMap["three"].value)}
+              >
                 <NumberIcon
-                  pushNumber={() => pushNumber(keypadMap["three"].value)}
+                  pushNumber={() => {}}
                   value={keypadMap["three"].value}
                   numberButtonColor={styleNumberButtonColor}
                 />
               </div>
             </div>
             <div className="keypadRow">
-              <div className="keypadItem">
+              <div
+                className="keypadItem"
+                onClick={() => pushNumber(keypadMap["four"].value)}
+              >
                 <NumberIcon
-                  pushNumber={() => pushNumber(keypadMap["four"].value)}
+                  pushNumber={() => {}}
                   value={keypadMap["four"].value}
                   numberButtonColor={styleNumberButtonColor}
                 />
               </div>
-              <div className="keypadItem">
+              <div
+                className="keypadItem"
+                onClick={() => pushNumber(keypadMap["five"].value)}
+              >
                 <NumberIcon
-                  pushNumber={() => pushNumber(keypadMap["five"].value)}
+                  pushNumber={() => {}}
                   value={keypadMap["five"].value}
                   numberButtonColor={styleNumberButtonColor}
                 />
               </div>
-              <div className="keypadItem">
+              <div
+                className="keypadItem"
+                onClick={() => pushNumber(keypadMap["six"].value)}
+              >
                 <NumberIcon
-                  pushNumber={() => pushNumber(keypadMap["six"].value)}
+                  pushNumber={() => {}}
                   value={keypadMap["six"].value}
                   numberButtonColor={styleNumberButtonColor}
                 />
               </div>
             </div>
             <div className="keypadRow">
-              <div className="keypadItem">
+              <div
+                className="keypadItem"
+                onClick={() => pushNumber(keypadMap["seven"].value)}
+              >
                 <NumberIcon
-                  pushNumber={() => pushNumber(keypadMap["seven"].value)}
+                  pushNumber={() => {}}
                   value={keypadMap["seven"].value}
                   numberButtonColor={styleNumberButtonColor}
                 />
               </div>
-              <div className="keypadItem">
+              <div
+                className="keypadItem"
+                onClick={() => pushNumber(keypadMap["eight"].value)}
+              >
                 <NumberIcon
-                  pushNumber={() => pushNumber(keypadMap["eight"].value)}
+                  pushNumber={() => {}}
                   value={keypadMap["eight"].value}
                   numberButtonColor={styleNumberButtonColor}
                 />
               </div>
-              <div className="keypadItem">
+              <div
+                className="keypadItem"
+                onClick={() => pushNumber(keypadMap["nine"].value)}
+              >
                 <NumberIcon
-                  pushNumber={() => pushNumber(keypadMap["nine"].value)}
+                  pushNumber={() => {}}
                   value={keypadMap["nine"].value}
                   numberButtonColor={styleNumberButtonColor}
                 />
@@ -233,16 +273,19 @@ const Pincode = ({
                   resetButtonColor={styleResetButtonColor}
                 />
               </div>
-              <div className="keypadItem">
+              <div
+                className="keypadItem"
+                onClick={() => pushNumber(keypadMap["zero"].value)}
+              >
                 <NumberIcon
-                  pushNumber={() => pushNumber(keypadMap["zero"].value)}
+                  pushNumber={() => {}}
                   value={keypadMap["zero"].value}
                   numberButtonColor={styleNumberButtonColor}
                 />
               </div>
-              <div className="keypadItem">
+              <div className="keypadItem" onClick={() => popNumber()}>
                 <DeleteIcon
-                  popNumber={() => popNumber()}
+                  popNumber={() => {}}
                   deleteButtonColor={styleDeleteButtonColor}
                 />
               </div>
@@ -254,7 +297,7 @@ const Pincode = ({
           <>
             <div className="keypadRowBottom">
               <div
-                className="keypadItemBottom"
+                className="keypadItem bottom"
                 onClick={() => pushNumber(keypadMap["one"].value)}
               >
                 <NumberIcon
@@ -264,7 +307,7 @@ const Pincode = ({
                 />
               </div>
               <div
-                className="keypadItemBottom"
+                className="keypadItem bottom"
                 onClick={() => pushNumber(keypadMap["two"].value)}
               >
                 <NumberIcon
@@ -274,7 +317,7 @@ const Pincode = ({
                 />
               </div>
               <div
-                className="keypadItemBottom"
+                className="keypadItem bottom"
                 onClick={() => pushNumber(keypadMap["three"].value)}
               >
                 <NumberIcon
@@ -284,7 +327,7 @@ const Pincode = ({
                 />
               </div>
               <div
-                className="keypadItemBottom"
+                className="keypadItem bottom"
                 onClick={() => pushNumber(keypadMap["four"].value)}
               >
                 <NumberIcon
@@ -294,7 +337,7 @@ const Pincode = ({
                 />
               </div>
               <div
-                className="keypadItemBottom"
+                className="keypadItem bottom"
                 onClick={() => pushNumber(keypadMap["five"].value)}
               >
                 <NumberIcon
@@ -304,7 +347,7 @@ const Pincode = ({
                 />
               </div>
               <div
-                className="keypadItemBottom"
+                className="keypadItem bottom"
                 onClick={() => resetInputValue()}
               >
                 <ResetIcon
@@ -315,7 +358,7 @@ const Pincode = ({
             </div>
             <div className="keypadRowBottom">
               <div
-                className="keypadItemBottom"
+                className="keypadItem bottom"
                 onClick={() => pushNumber(keypadMap["six"].value)}
               >
                 <NumberIcon
@@ -325,7 +368,7 @@ const Pincode = ({
                 />
               </div>
               <div
-                className="keypadItemBottom"
+                className="keypadItem bottom"
                 onClick={() => pushNumber(keypadMap["seven"].value)}
               >
                 <NumberIcon
@@ -335,7 +378,7 @@ const Pincode = ({
                 />
               </div>
               <div
-                className="keypadItemBottom"
+                className="keypadItem bottom"
                 onClick={() => pushNumber(keypadMap["eight"].value)}
               >
                 <NumberIcon
@@ -345,7 +388,7 @@ const Pincode = ({
                 />
               </div>
               <div
-                className="keypadItemBottom"
+                className="keypadItem bottom"
                 onClick={() => pushNumber(keypadMap["nine"].value)}
               >
                 <NumberIcon
@@ -355,7 +398,7 @@ const Pincode = ({
                 />
               </div>
               <div
-                className="keypadItemBottom"
+                className="keypadItem bottom"
                 onClick={() => pushNumber(keypadMap["zero"].value)}
               >
                 <NumberIcon
@@ -364,7 +407,7 @@ const Pincode = ({
                   numberButtonColor={styleNumberButtonColor}
                 />
               </div>
-              <div className="keypadItemBottom" onClick={() => popNumber()}>
+              <div className="keypadItem bottom" onClick={() => popNumber()}>
                 <DeleteIcon
                   popNumber={() => {}}
                   deleteButtonColor={styleDeleteButtonColor}
