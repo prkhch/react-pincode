@@ -32,7 +32,8 @@ function App() {
 
 export default App;
 ```
-### Options ###### \* : Required
+### Options 
+###### \* : Required
 | Name              | Description                                  | Default            | Type    |
 |-----------------------|----------------------------------------------|--------------------|---------|
 | `onComplete`*         | Callback function when input is complete     | -                  | function |

@@ -18,7 +18,7 @@ const Pincode = _ref => {
   let {
     onComplete,
     randomKeypad,
-    maxLength,
+    length,
     defaultMessage,
     styleBottomLayout,
     styleBackgroundColor,
@@ -29,7 +29,7 @@ const Pincode = _ref => {
     styleResetButtonColor,
     styleDeleteButtonColor
   } = _ref;
-  const maxLengthValue = maxLength ? maxLength > 8 ? 8 : maxLength < 4 ? 4 : maxLength : 4;
+  const lengthValue = length ? length > 8 ? 8 : length < 4 ? 4 : length : 4;
   const [message, setMessage] = (0, _react.useState)(defaultMessage);
   const [errorMessage, setErrorMessage] = (0, _react.useState)("");
 
@@ -91,7 +91,7 @@ const Pincode = _ref => {
   // on complete
   (0, _react.useEffect)(() => {
     // 핀코드가 MAX_LENGTH에 도달했는지 확인
-    if (inputValue.length === maxLengthValue) {
+    if (inputValue.length === lengthValue) {
       onComplete({
         inputValue: inputValue,
         setMessage: setMessage,
@@ -153,7 +153,7 @@ const Pincode = _ref => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  const circle_empty_arr = [...Array(maxLengthValue - inputValue.length)];
+  const circle_empty_arr = [...Array(lengthValue - inputValue.length)];
   const circle_fill_arr = [...Array(inputValue.length)];
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "container fadeIn",
