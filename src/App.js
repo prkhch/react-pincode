@@ -22,7 +22,7 @@ function App() {
         onComplete={onComplete}
         randomKeypad={true}
         length={6}
-        defaultMessage="암호 입력"
+        // defaultMessage="암호 입력"
         styleBottomLayout={true}
         styleBackgroundColor="#f8f9fa"
         styleMessageColor="#0d6efd"
