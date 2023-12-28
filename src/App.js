@@ -21,7 +21,7 @@ function App() {
       <Pincode
         onComplete={onComplete}
         randomKeypad={true}
-        maxLength={6}
+        length={6}
         defaultMessage="암호 입력"
         styleBottomLayout={true}
         styleBackgroundColor="#f8f9fa"

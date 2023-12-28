@@ -9,7 +9,7 @@ import CircleIcon from "./CircleIcon";
 const Pincode = ({
   onComplete,
   randomKeypad,
-  maxLength,
+  length,
   defaultMessage,
   styleBottomLayout,
   styleBackgroundColor,
@@ -20,13 +20,7 @@ const Pincode = ({
   styleResetButtonColor,
   styleDeleteButtonColor,
 }) => {
-  const maxLengthValue = maxLength
-    ? maxLength > 8
-      ? 8
-      : maxLength < 4
-      ? 4
-      : maxLength
-    : 4;
+  const lengthValue = length ? (length > 8 ? 8 : length < 4 ? 4 : length) : 4;
 
   const [message, setMessage] = useState(defaultMessage);
   const [errorMessage, setErrorMessage] = useState("");
@@ -69,7 +63,7 @@ const Pincode = ({
   // on complete
   useEffect(() => {
     // 핀코드가 MAX_LENGTH에 도달했는지 확인
-    if (inputValue.length === maxLengthValue) {
+    if (inputValue.length === lengthValue) {
       onComplete({
         inputValue: inputValue,
         setMessage: setMessage,
@@ -132,7 +126,7 @@ const Pincode = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const circle_empty_arr = [...Array(maxLengthValue - inputValue.length)];
+  const circle_empty_arr = [...Array(lengthValue - inputValue.length)];
   const circle_fill_arr = [...Array(inputValue.length)];
 
   return (
