@@ -8,14 +8,20 @@
 }
 
 .keypadBox {
-  border: 1px dashed red;
   display: flex;
   flex-direction: column;
   width: 80%;
 }
 
 .keypadRow {
-  border: 1px solid blueviolet;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 15vh;
+}
+
+.keypadRowBottom {
+  border: 1px lightgray solid;
   display: flex;
   justify-content: space-around;
   width: 100%;
@@ -23,7 +29,15 @@
 }
 
 .keypadItem {
-  border: 3px solid black;
+  width: 100%; 
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.keypadItemBottom {
+  border: 1px lightgray solid;
   width: 100%; 
   height: 100%;
   display: flex;

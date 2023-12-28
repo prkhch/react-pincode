@@ -6,12 +6,17 @@ import MINIMIZE_ICON from "./icons/MINIMIZE_ICON.svg";
 import NumberIcon from "./NumberIcon";
 import ResetIcon from "./ResetIcon";
 import DeleteIcon from "./DeleteIcon";
+import CircleIcon from "./CircleIcon";
 
 const Pincode = ({
   onComplete,
   randomKeypad,
   maxLength,
+  defaultMessage,
   styleBottomLayout,
+  styleMessageColor,
+  styleErrorMessageColor,
+  styleInputCircleColor,
   styleNumberButtonColor,
   styleResetButtonColor,
   styleDeleteButtonColor,
@@ -24,7 +29,7 @@ const Pincode = ({
       : maxLength
     : 4;
 
-  const [message, setMessage] = useState("Enter Pincode");
+  const [message, setMessage] = useState(defaultMessage);
   const [errorMessage, setErrorMessage] = useState("");
 
   // keypad map
@@ -124,24 +129,25 @@ const Pincode = ({
     }
   }, []);
 
-  // style
-
   const circle_empty_arr = [...Array(maxLengthValue - inputValue.length)];
   const circle_fill_arr = [...Array(inputValue.length)];
 
   return (
     <div className="container">
-      {!errorMessage && <div className="">{message}</div>}
-      {errorMessage && <div className="errorBox">{errorMessage}</div>}
+      {!errorMessage && (
+        <div className="" style={{ color: styleMessageColor }}>
+          {message}
+        </div>
+      )}
+      {errorMessage && (
+        <div className="errorBox" style={{ color: styleErrorMessageColor }}>
+          {errorMessage}
+        </div>
+      )}
 
       <div className={styleBottomLayout ? "inputBoxBottom" : "inputBox"}>
         {circle_fill_arr.map((_, idx) => (
-          <img
-            key={idx}
-            src={CIRCLE_ICON_FILL}
-            alt="CircleFill"
-            className="circleFadeIn"
-          />
+          <CircleIcon className="" iconColor={styleInputCircleColor} />
         ))}
         {circle_empty_arr.map((_, idx) => (
           <img key={idx} src={MINIMIZE_ICON} alt="Circle" />
@@ -236,7 +242,7 @@ const Pincode = ({
               </div>
               <div className="keypadItem">
                 <DeleteIcon
-                  pushNumber={() => popNumber()}
+                  popNumber={() => popNumber()}
                   deleteButtonColor={styleDeleteButtonColor}
                 />
               </div>
@@ -246,44 +252,123 @@ const Pincode = ({
 
         {styleBottomLayout && (
           <>
-            <div className="keypadRow">
-              <div className="keypadItem">
-                <img src={keypadMap["one"].icon} alt="One" />
+            <div className="keypadRowBottom">
+              <div
+                className="keypadItemBottom"
+                onClick={() => pushNumber(keypadMap["one"].value)}
+              >
+                <NumberIcon
+                  pushNumber={() => {}}
+                  value={keypadMap["one"].value}
+                  numberButtonColor={styleNumberButtonColor}
+                />
               </div>
-              <div className="keypadItem">
-                <img src={keypadMap["two"].icon} alt="Two" />
+              <div
+                className="keypadItemBottom"
+                onClick={() => pushNumber(keypadMap["two"].value)}
+              >
+                <NumberIcon
+                  pushNumber={() => {}}
+                  value={keypadMap["two"].value}
+                  numberButtonColor={styleNumberButtonColor}
+                />
               </div>
-              <div className="keypadItem">
-                <img src={keypadMap["three"].icon} alt="Three" />
+              <div
+                className="keypadItemBottom"
+                onClick={() => pushNumber(keypadMap["three"].value)}
+              >
+                <NumberIcon
+                  pushNumber={() => {}}
+                  value={keypadMap["three"].value}
+                  numberButtonColor={styleNumberButtonColor}
+                />
               </div>
-              <div className="keypadItem">
-                <img src={keypadMap["four"].icon} alt="Four" />
+              <div
+                className="keypadItemBottom"
+                onClick={() => pushNumber(keypadMap["four"].value)}
+              >
+                <NumberIcon
+                  pushNumber={() => {}}
+                  value={keypadMap["four"].value}
+                  numberButtonColor={styleNumberButtonColor}
+                />
               </div>
-              <div className="keypadItem">
-                <img src={keypadMap["five"].icon} alt="Five" />
+              <div
+                className="keypadItemBottom"
+                onClick={() => pushNumber(keypadMap["five"].value)}
+              >
+                <NumberIcon
+                  pushNumber={() => {}}
+                  value={keypadMap["five"].value}
+                  numberButtonColor={styleNumberButtonColor}
+                />
               </div>
-              <div className="keypadItem" onClick={() => resetInputValue()}>
-                <img src={RESET_ICON} alt="Reset" />
+              <div
+                className="keypadItemBottom"
+                onClick={() => resetInputValue()}
+              >
+                <ResetIcon
+                  resetInputValue={() => {}}
+                  resetButtonColor={styleResetButtonColor}
+                />
               </div>
             </div>
-            <div className="keypadRow">
-              <div className="keypadItem">
-                <img src={keypadMap["six"].icon} alt="Six" />
+            <div className="keypadRowBottom">
+              <div
+                className="keypadItemBottom"
+                onClick={() => pushNumber(keypadMap["six"].value)}
+              >
+                <NumberIcon
+                  pushNumber={() => {}}
+                  value={keypadMap["six"].value}
+                  numberButtonColor={styleNumberButtonColor}
+                />
               </div>
-              <div className="keypadItem">
-                <img src={keypadMap["seven"].icon} alt="Seven" />
+              <div
+                className="keypadItemBottom"
+                onClick={() => pushNumber(keypadMap["seven"].value)}
+              >
+                <NumberIcon
+                  pushNumber={() => {}}
+                  value={keypadMap["seven"].value}
+                  numberButtonColor={styleNumberButtonColor}
+                />
               </div>
-              <div className="keypadItem">
-                <img src={keypadMap["eight"].icon} alt="Eight" />
+              <div
+                className="keypadItemBottom"
+                onClick={() => pushNumber(keypadMap["eight"].value)}
+              >
+                <NumberIcon
+                  pushNumber={() => {}}
+                  value={keypadMap["eight"].value}
+                  numberButtonColor={styleNumberButtonColor}
+                />
               </div>
-              <div className="keypadItem">
-                <img src={keypadMap["nine"].icon} alt="Nine" />
+              <div
+                className="keypadItemBottom"
+                onClick={() => pushNumber(keypadMap["nine"].value)}
+              >
+                <NumberIcon
+                  pushNumber={() => {}}
+                  value={keypadMap["nine"].value}
+                  numberButtonColor={styleNumberButtonColor}
+                />
               </div>
-              <div className="keypadItem">
-                <img src={keypadMap["zero"].icon} alt="Zero" />
+              <div
+                className="keypadItemBottom"
+                onClick={() => pushNumber(keypadMap["zero"].value)}
+              >
+                <NumberIcon
+                  pushNumber={() => {}}
+                  value={keypadMap["zero"].value}
+                  numberButtonColor={styleNumberButtonColor}
+                />
               </div>
-              <div className="keypadItem" onClick={() => popNumber()}>
-                <img src={DELETE_ICON} alt="Delete" />
+              <div className="keypadItemBottom" onClick={() => popNumber()}>
+                <DeleteIcon
+                  popNumber={() => {}}
+                  deleteButtonColor={styleDeleteButtonColor}
+                />
               </div>
             </div>
           </>
