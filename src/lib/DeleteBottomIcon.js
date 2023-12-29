@@ -1,8 +1,8 @@
 import React from "react";
 import "./style.css";
-import { ReactComponent as FUNC_DEL_ICON } from "./icons/FUNC_DEL_ICON.svg";
+import { ReactComponent as FUNC_DEL_ICON } from "./icons/bottom/FUNC_DEL_ICON.svg";
 
-const DeleteIcon = (props) => {
+const DeleteBottomIcon = (props) => {
   return (
     <FUNC_DEL_ICON
       className="funcIcon"
@@ -12,4 +12,4 @@ const DeleteIcon = (props) => {
   );
 };
 
-export default DeleteIcon;
+export default DeleteBottomIcon;

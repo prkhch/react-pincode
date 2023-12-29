@@ -4,15 +4,14 @@ function App() {
   // example
   const onComplete = ({ inputValue, setMessage, setErrorMessage }) => {
     console.log(inputValue);
-
-    if (inputValue === "000000") {
-      setMessage("성공");
+    if (inputValue === "0000") {
+      setMessage("Correct PIN!");
       setErrorMessage("");
     }
 
-    if (inputValue !== "000000") {
+    if (inputValue !== "0000") {
       setMessage("");
-      setErrorMessage("잘못된 입력!");
+      setErrorMessage("InCorrect PIN!");
     }
   };
 
@@ -21,16 +20,16 @@ function App() {
       <Pincode
         onComplete={onComplete}
         randomKeypad={true}
-        length={6}
-        // defaultMessage="암호 입력"
-        styleBottomLayout={true}
-        styleBackgroundColor="#f8f9fa"
-        styleMessageColor="#0d6efd"
-        styleErrorMessageColor="#dc3545"
-        styleInputCircleColor="#0d6efd"
-        styleNumberButtonColor="#0d6efd"
-        styleResetButtonColor="#0d6efd"
-        styleDeleteButtonColor="#0d6efd"
+        // length={6}
+        defaultMessage="Enter PIN"
+        // styleBottomLayout={true}
+        // styleBackgroundColor="#f0f0f0"
+        // styleMessageColor="#088395"
+        // styleErrorMessageColor="#ff0000"
+        // styleInputCircleColor="#088395"
+        // styleNumberButtonColor="#ff0000"
+        // styleResetButtonColor="#088395"
+        // styleDeleteButtonColor="#088395"
       />
     </div>
   );

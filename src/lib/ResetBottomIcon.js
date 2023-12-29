@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import { ReactComponent as FUNC_RESET_ICON } from "./icons/FUNC_RESET_ICON.svg";
+import { ReactComponent as FUNC_RESET_ICON } from "./icons/bottom/FUNC_RESET_ICON.svg";
 
 const ResetIcon = (props) => {
   return (

@@ -1,9 +1,14 @@
 import React from "react";
 import "./style.css";
-import { ReactComponent as CIRCLE_ICON } from "./icons/CIRCLE_ICON_FILL.svg";
+import { ReactComponent as INPUT_FILL_ICON } from "./icons/INPUT_FILL_ICON.svg";
 
 const CircleIcon = (props) => {
-  return <CIRCLE_ICON fill={props.iconColor} className="fadeIn"></CIRCLE_ICON>;
+  return (
+    <INPUT_FILL_ICON
+      fill={props.iconColor}
+      className="fadeIn"
+    ></INPUT_FILL_ICON>
+  );
 };
 
 export default CircleIcon;

@@ -1,4 +1,4 @@
-# Pincode Component for React
+# PIN code Component for React
 
 ### Quick Start
 ```
