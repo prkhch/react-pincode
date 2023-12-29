@@ -6,10 +6,13 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _react = _interopRequireWildcard(require("react"));
 require("./style.css");
-var _MINIMIZE_ICON = _interopRequireDefault(require("./icons/MINIMIZE_ICON.svg"));
+var _INPUT_EMPTY_ICON = _interopRequireDefault(require("./icons/INPUT_EMPTY_ICON.svg"));
 var _NumberIcon = _interopRequireDefault(require("./NumberIcon"));
+var _NumberBottomIcon = _interopRequireDefault(require("./NumberBottomIcon"));
 var _ResetIcon = _interopRequireDefault(require("./ResetIcon"));
+var _ResetBottomIcon = _interopRequireDefault(require("./ResetBottomIcon"));
 var _DeleteIcon = _interopRequireDefault(require("./DeleteIcon"));
+var _DeleteBottomIcon = _interopRequireDefault(require("./DeleteBottomIcon"));
 var _CircleIcon = _interopRequireDefault(require("./CircleIcon"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function (e) { return e ? t : r; })(e); }
@@ -178,7 +181,7 @@ const Pincode = _ref => {
     iconColor: styleInputCircleColor
   })), circle_empty_arr.map((_, idx) => /*#__PURE__*/_react.default.createElement("img", {
     key: idx,
-    src: _MINIMIZE_ICON.default,
+    src: _INPUT_EMPTY_ICON.default,
     alt: "Circle",
     className: ""
   }))), /*#__PURE__*/_react.default.createElement("div", {
@@ -186,134 +189,122 @@ const Pincode = _ref => {
   }, !styleBottomLayout && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
     className: "keypadRow"
   }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "keypadItem",
-    onClick: () => pushNumber(keypadMap["one"].value)
+    className: "keypadItem"
   }, /*#__PURE__*/_react.default.createElement(_NumberIcon.default, {
-    pushNumber: () => {},
+    pushNumber: () => pushNumber(keypadMap["one"].value),
     value: keypadMap["one"].value,
     numberButtonColor: styleNumberButtonColor
   })), /*#__PURE__*/_react.default.createElement("div", {
-    className: "keypadItem",
-    onClick: () => pushNumber(keypadMap["two"].value)
+    className: "keypadItem"
   }, /*#__PURE__*/_react.default.createElement(_NumberIcon.default, {
-    pushNumber: () => {},
+    pushNumber: () => pushNumber(keypadMap["two"].value),
     value: keypadMap["two"].value,
     numberButtonColor: styleNumberButtonColor
   })), /*#__PURE__*/_react.default.createElement("div", {
-    className: "keypadItem",
-    onClick: () => pushNumber(keypadMap["three"].value)
+    className: "keypadItem"
   }, /*#__PURE__*/_react.default.createElement(_NumberIcon.default, {
-    pushNumber: () => {},
+    pushNumber: () => pushNumber(keypadMap["three"].value),
     value: keypadMap["three"].value,
     numberButtonColor: styleNumberButtonColor
   }))), /*#__PURE__*/_react.default.createElement("div", {
     className: "keypadRow"
   }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "keypadItem",
-    onClick: () => pushNumber(keypadMap["four"].value)
+    className: "keypadItem"
   }, /*#__PURE__*/_react.default.createElement(_NumberIcon.default, {
-    pushNumber: () => {},
+    pushNumber: () => pushNumber(keypadMap["four"].value),
     value: keypadMap["four"].value,
     numberButtonColor: styleNumberButtonColor
   })), /*#__PURE__*/_react.default.createElement("div", {
-    className: "keypadItem",
-    onClick: () => pushNumber(keypadMap["five"].value)
+    className: "keypadItem"
   }, /*#__PURE__*/_react.default.createElement(_NumberIcon.default, {
-    pushNumber: () => {},
+    pushNumber: () => pushNumber(keypadMap["five"].value),
     value: keypadMap["five"].value,
     numberButtonColor: styleNumberButtonColor
   })), /*#__PURE__*/_react.default.createElement("div", {
-    className: "keypadItem",
-    onClick: () => pushNumber(keypadMap["six"].value)
+    className: "keypadItem"
   }, /*#__PURE__*/_react.default.createElement(_NumberIcon.default, {
-    pushNumber: () => {},
+    pushNumber: () => pushNumber(keypadMap["six"].value),
     value: keypadMap["six"].value,
     numberButtonColor: styleNumberButtonColor
   }))), /*#__PURE__*/_react.default.createElement("div", {
     className: "keypadRow"
   }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "keypadItem",
-    onClick: () => pushNumber(keypadMap["seven"].value)
+    className: "keypadItem"
   }, /*#__PURE__*/_react.default.createElement(_NumberIcon.default, {
-    pushNumber: () => {},
+    pushNumber: () => pushNumber(keypadMap["seven"].value),
     value: keypadMap["seven"].value,
     numberButtonColor: styleNumberButtonColor
   })), /*#__PURE__*/_react.default.createElement("div", {
-    className: "keypadItem",
-    onClick: () => pushNumber(keypadMap["eight"].value)
+    className: "keypadItem"
   }, /*#__PURE__*/_react.default.createElement(_NumberIcon.default, {
-    pushNumber: () => {},
+    pushNumber: () => pushNumber(keypadMap["eight"].value),
     value: keypadMap["eight"].value,
     numberButtonColor: styleNumberButtonColor
   })), /*#__PURE__*/_react.default.createElement("div", {
-    className: "keypadItem",
-    onClick: () => pushNumber(keypadMap["nine"].value)
+    className: "keypadItem"
   }, /*#__PURE__*/_react.default.createElement(_NumberIcon.default, {
-    pushNumber: () => {},
+    pushNumber: () => pushNumber(keypadMap["nine"].value),
     value: keypadMap["nine"].value,
     numberButtonColor: styleNumberButtonColor
   }))), /*#__PURE__*/_react.default.createElement("div", {
     className: "keypadRow"
   }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "keypadItem",
-    onClick: () => resetInputValue()
+    className: "keypadItem"
   }, /*#__PURE__*/_react.default.createElement(_ResetIcon.default, {
     resetInputValue: () => resetInputValue(),
     resetButtonColor: styleResetButtonColor
   })), /*#__PURE__*/_react.default.createElement("div", {
-    className: "keypadItem",
-    onClick: () => pushNumber(keypadMap["zero"].value)
+    className: "keypadItem"
   }, /*#__PURE__*/_react.default.createElement(_NumberIcon.default, {
-    pushNumber: () => {},
+    pushNumber: () => pushNumber(keypadMap["zero"].value),
     value: keypadMap["zero"].value,
     numberButtonColor: styleNumberButtonColor
   })), /*#__PURE__*/_react.default.createElement("div", {
-    className: "keypadItem",
-    onClick: () => popNumber()
+    className: "keypadItem"
   }, /*#__PURE__*/_react.default.createElement(_DeleteIcon.default, {
-    popNumber: () => {},
+    popNumber: () => popNumber(),
     deleteButtonColor: styleDeleteButtonColor
   })))), styleBottomLayout && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
     className: "keypadRowBottom"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "keypadItem bottom",
     onClick: () => pushNumber(keypadMap["one"].value)
-  }, /*#__PURE__*/_react.default.createElement(_NumberIcon.default, {
+  }, /*#__PURE__*/_react.default.createElement(_NumberBottomIcon.default, {
     pushNumber: () => {},
     value: keypadMap["one"].value,
     numberButtonColor: styleNumberButtonColor
   })), /*#__PURE__*/_react.default.createElement("div", {
     className: "keypadItem bottom",
     onClick: () => pushNumber(keypadMap["two"].value)
-  }, /*#__PURE__*/_react.default.createElement(_NumberIcon.default, {
+  }, /*#__PURE__*/_react.default.createElement(_NumberBottomIcon.default, {
     pushNumber: () => {},
     value: keypadMap["two"].value,
     numberButtonColor: styleNumberButtonColor
   })), /*#__PURE__*/_react.default.createElement("div", {
     className: "keypadItem bottom",
     onClick: () => pushNumber(keypadMap["three"].value)
-  }, /*#__PURE__*/_react.default.createElement(_NumberIcon.default, {
+  }, /*#__PURE__*/_react.default.createElement(_NumberBottomIcon.default, {
     pushNumber: () => {},
     value: keypadMap["three"].value,
     numberButtonColor: styleNumberButtonColor
   })), /*#__PURE__*/_react.default.createElement("div", {
     className: "keypadItem bottom",
     onClick: () => pushNumber(keypadMap["four"].value)
-  }, /*#__PURE__*/_react.default.createElement(_NumberIcon.default, {
+  }, /*#__PURE__*/_react.default.createElement(_NumberBottomIcon.default, {
     pushNumber: () => {},
     value: keypadMap["four"].value,
     numberButtonColor: styleNumberButtonColor
   })), /*#__PURE__*/_react.default.createElement("div", {
     className: "keypadItem bottom",
     onClick: () => pushNumber(keypadMap["five"].value)
-  }, /*#__PURE__*/_react.default.createElement(_NumberIcon.default, {
+  }, /*#__PURE__*/_react.default.createElement(_NumberBottomIcon.default, {
     pushNumber: () => {},
     value: keypadMap["five"].value,
     numberButtonColor: styleNumberButtonColor
   })), /*#__PURE__*/_react.default.createElement("div", {
     className: "keypadItem bottom",
     onClick: () => resetInputValue()
-  }, /*#__PURE__*/_react.default.createElement(_ResetIcon.default, {
+  }, /*#__PURE__*/_react.default.createElement(_ResetBottomIcon.default, {
     resetInputValue: () => {},
     resetButtonColor: styleResetButtonColor
   }))), /*#__PURE__*/_react.default.createElement("div", {
@@ -321,42 +312,42 @@ const Pincode = _ref => {
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "keypadItem bottom",
     onClick: () => pushNumber(keypadMap["six"].value)
-  }, /*#__PURE__*/_react.default.createElement(_NumberIcon.default, {
+  }, /*#__PURE__*/_react.default.createElement(_NumberBottomIcon.default, {
     pushNumber: () => {},
     value: keypadMap["six"].value,
     numberButtonColor: styleNumberButtonColor
   })), /*#__PURE__*/_react.default.createElement("div", {
     className: "keypadItem bottom",
     onClick: () => pushNumber(keypadMap["seven"].value)
-  }, /*#__PURE__*/_react.default.createElement(_NumberIcon.default, {
+  }, /*#__PURE__*/_react.default.createElement(_NumberBottomIcon.default, {
     pushNumber: () => {},
     value: keypadMap["seven"].value,
     numberButtonColor: styleNumberButtonColor
   })), /*#__PURE__*/_react.default.createElement("div", {
     className: "keypadItem bottom",
     onClick: () => pushNumber(keypadMap["eight"].value)
-  }, /*#__PURE__*/_react.default.createElement(_NumberIcon.default, {
+  }, /*#__PURE__*/_react.default.createElement(_NumberBottomIcon.default, {
     pushNumber: () => {},
     value: keypadMap["eight"].value,
     numberButtonColor: styleNumberButtonColor
   })), /*#__PURE__*/_react.default.createElement("div", {
     className: "keypadItem bottom",
     onClick: () => pushNumber(keypadMap["nine"].value)
-  }, /*#__PURE__*/_react.default.createElement(_NumberIcon.default, {
+  }, /*#__PURE__*/_react.default.createElement(_NumberBottomIcon.default, {
     pushNumber: () => {},
     value: keypadMap["nine"].value,
     numberButtonColor: styleNumberButtonColor
   })), /*#__PURE__*/_react.default.createElement("div", {
     className: "keypadItem bottom",
     onClick: () => pushNumber(keypadMap["zero"].value)
-  }, /*#__PURE__*/_react.default.createElement(_NumberIcon.default, {
+  }, /*#__PURE__*/_react.default.createElement(_NumberBottomIcon.default, {
     pushNumber: () => {},
     value: keypadMap["zero"].value,
     numberButtonColor: styleNumberButtonColor
   })), /*#__PURE__*/_react.default.createElement("div", {
     className: "keypadItem bottom",
     onClick: () => popNumber()
-  }, /*#__PURE__*/_react.default.createElement(_DeleteIcon.default, {
+  }, /*#__PURE__*/_react.default.createElement(_DeleteBottomIcon.default, {
     popNumber: () => {},
     deleteButtonColor: styleDeleteButtonColor
   }))))));

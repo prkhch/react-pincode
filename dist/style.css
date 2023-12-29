@@ -15,6 +15,7 @@
   display: flex;
   flex-direction: column;
   width: 80%;
+  gap: 2px;
 }
 
 .keypadRow {
@@ -25,11 +26,12 @@
 }
 
 .keypadRowBottom {
-  border: 1px whitesmoke solid;
+  border: 1px rgba(255,255,255,0.5) solid;
   display: flex;
   justify-content: space-around;
   width: 100%;
   height: 15vh;
+  gap:2px;
 }
 
 .keypadItem {
@@ -38,27 +40,37 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.keypadIcon {
   cursor: pointer;
 }
 
-.keypadItem:hover {
-  background-color: whitesmoke;
+.keypadIcon:hover circle {
+  fill: #e0e0e0;
+}
+
+.funcIcon {
+  cursor: pointer;
+}
+
+.funcIcon:hover circle {
+  fill: #e0e0e0;
 }
 
 .keypadItem.bottom {
-  border: 1px whitesmoke solid;
+  border: 1px #e0e0e0 solid;
 }
 
 .keypadItem.bottom:hover {
-  background-color: whitesmoke;
+  background-color: #e0e0e0;
+  cursor: pointer;
 }
 
 .messageBox {
-  font-weight: bold;
 }
 
 .errorBox {
-  font-weight: bold;
 }
 
 .inputBox {
@@ -67,10 +79,11 @@
   align-items: center;
   width: 80%;
   height: 10vh;
+  gap: 2px;
 }
 
 .inputBox.bottom {
-  height: 20%;
+  height: 20vh;
 }
 
 /* Animation */
