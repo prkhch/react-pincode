@@ -1,5 +1,6 @@
 ## Quick Start
-PIN code Component for React
+PIN input Component for React
+
 ```
 npm install @prkhch/react-pincode
 ```
