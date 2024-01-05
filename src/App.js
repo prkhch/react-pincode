@@ -22,7 +22,7 @@ function App() {
         // randomKeypad={true}
         length={4}
         defaultMessage="Enter PIN"
-        styleBottomLayout={true}
+        // styleBottomLayout={true}
         styleBackgroundColor="#ffffff"
         styleBackgroundOpacity={1}
         styleMessageColor="#000000"

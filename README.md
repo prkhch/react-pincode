@@ -1,6 +1,5 @@
-###### PIN code Component for React
-
 ## Quick Start
+PIN code Component for React
 ```
 npm install @prkhch/react-pincode
 ```
@@ -81,8 +80,8 @@ The `onComplete` function is called when the user finishes entering their PIN. I
 ## Example
 |Default|Bottom Layout|
 |:--------------------------------------:|:---------------------------------------:|
-| ![Default](https://github.com/prkhch/react-pincode/assets/122577719/d2bbed43-21fd-45f7-a8e9-1a154b6679f1) | ![BottomLayout](https://github.com/prkhch/react-pincode/assets/122577719/49248ae0-404c-46d1-9b37-5fead86d3c5c) | 
+| ![Default](https://github.com/prkhch/react-pincode/assets/122577719/f404f088-84c8-48eb-a5d0-47d8d5eceb51) | ![BottomLayout](https://github.com/prkhch/react-pincode/assets/122577719/a3b27f88-1cf3-43f5-b8d9-a2cda97872af) | 
 
 |Random Keypad|Customizing|
-|:--------------------------------------:|:--------------------------------------:|
-| ![Random Keypad](https://github.com/prkhch/react-pincode/assets/122577719/5d2a4528-9c06-4b31-af04-56a1c0f2fd05) | ![Customizing](https://github.com/prkhch/react-pincode/assets/122577719/8aa5c45d-6456-4895-bd04-c2ab4396d711) | 
+|:--------------------------------------:|:---------------------------------------:|
+| ![Random Keypad](https://github.com/prkhch/react-pincode/assets/122577719/12768754-aec3-4328-b286-458c9e528e34) | ![Customizing](https://github.com/prkhch/react-pincode/assets/122577719/e6b638f1-6b23-4009-97e2-f9a82fc7ae16) | 
