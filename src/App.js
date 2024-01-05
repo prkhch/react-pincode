@@ -19,14 +19,15 @@ function App() {
     <div>
       <Pincode
         onComplete={onComplete}
-        // randomKeypad={true}
-        // length={6}
+        randomKeypad={true}
+        length={6}
         defaultMessage="Enter PIN"
-        // styleBottomLayout={true}
-        // styleBackgroundColor="#f0f0f0"
+        styleBottomLayout={true}
+        styleBackgroundColor="#f0f0f0"
         styleMessageColor="#088395"
         styleErrorMessageColor="#ff0000"
-        styleInputCircleColor="#088395"
+        styleInputBoxColor="#3d455b"
+        styleInputCircleColor="#ffffff"
         styleNumberFontColor="#0084bc"
         styleNumberButtonColor="#d1d3bf"
         styleResetButtonColor="#088395"

@@ -1,6 +1,6 @@
 import React from "react";
 
-const THREE_ICON = (props) => (
+const NUM_THREE_ICON = (props) => (
   <svg
     width="70"
     height="70"
@@ -18,4 +18,4 @@ const THREE_ICON = (props) => (
   </svg>
 );
 
-export default THREE_ICON;
+export default NUM_THREE_ICON;

@@ -51,7 +51,7 @@
   cursor: pointer;
 }
 
-.keypadIcon:hover circle {
+.keypadRow .keypadIcon:hover circle {
   fill: #e0e0e0;
 }
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-const ZERO_ICON = (props) => (
+const NUM_ZERO_ICON = (props) => (
   <svg
     width="70"
     height="70"
@@ -18,4 +18,4 @@ const ZERO_ICON = (props) => (
   </svg>
 );
 
-export default ZERO_ICON;
+export default NUM_ZERO_ICON;

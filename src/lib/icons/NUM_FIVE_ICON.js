@@ -1,6 +1,6 @@
 import React from "react";
 
-const FIVE_ICON = (props) => (
+const NUM_FIVE_ICON = (props) => (
   <svg
     width="70"
     height="70"
@@ -18,4 +18,4 @@ const FIVE_ICON = (props) => (
   </svg>
 );
 
-export default FIVE_ICON;
+export default NUM_FIVE_ICON;

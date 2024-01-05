@@ -8,7 +8,7 @@ const INPUT_FILL_ICON = (props) => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect width="48" height="48" rx="6" fill="#F7F8F9" />
+    <rect width="48" height="48" rx="6" fill={props.styleInputBoxColor} />
   </svg>
 );
 

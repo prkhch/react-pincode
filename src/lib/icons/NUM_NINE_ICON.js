@@ -1,6 +1,6 @@
 import React from "react";
 
-const NINE_ICON = (props) => (
+const NUM_NINE_ICON = (props) => (
   <svg
     width="70"
     height="70"
@@ -18,4 +18,4 @@ const NINE_ICON = (props) => (
   </svg>
 );
 
-export default NINE_ICON;
+export default NUM_NINE_ICON;
