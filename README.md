@@ -71,7 +71,6 @@ export default App;
 | `styleHoverColor` | Hover color for the buttons              | -                  | string  
 
 ### `onComplete` Function
----
 - `inputValue`: The PIN entered by the user.
 - `setMessage`: Function to display a message.
 - `setErrorMessage`: Function to display an error message.
