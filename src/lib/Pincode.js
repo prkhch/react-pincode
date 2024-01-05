@@ -21,6 +21,7 @@ const Pincode = ({
   styleNumberButtonColor,
   styleResetButtonColor,
   styleDeleteButtonColor,
+  styleHoverColor,
 }) => {
   const lengthValue = length ? (length > 8 ? 8 : length < 4 ? 4 : length) : 4;
 
@@ -174,6 +175,7 @@ const Pincode = ({
                   numberButtonColor={styleNumberButtonColor}
                   styleNumberFontColor={styleNumberFontColor}
                   styleNumberButtonColor={styleNumberButtonColor}
+                  styleHoverColor={styleHoverColor}
                 />
               </div>
               <div className="keypadItem">
@@ -183,6 +185,7 @@ const Pincode = ({
                   numberButtonColor={styleNumberButtonColor}
                   styleNumberFontColor={styleNumberFontColor}
                   styleNumberButtonColor={styleNumberButtonColor}
+                  styleHoverColor={styleHoverColor}
                 />
               </div>
               <div className="keypadItem">
@@ -191,6 +194,7 @@ const Pincode = ({
                   value={keypadMap["three"].value}
                   styleNumberFontColor={styleNumberFontColor}
                   styleNumberButtonColor={styleNumberButtonColor}
+                  styleHoverColor={styleHoverColor}
                 />
               </div>
             </div>
@@ -201,6 +205,7 @@ const Pincode = ({
                   value={keypadMap["four"].value}
                   styleNumberFontColor={styleNumberFontColor}
                   styleNumberButtonColor={styleNumberButtonColor}
+                  styleHoverColor={styleHoverColor}
                 />
               </div>
               <div className="keypadItem">
@@ -209,6 +214,7 @@ const Pincode = ({
                   value={keypadMap["five"].value}
                   styleNumberFontColor={styleNumberFontColor}
                   styleNumberButtonColor={styleNumberButtonColor}
+                  styleHoverColor={styleHoverColor}
                 />
               </div>
               <div className="keypadItem">
@@ -217,6 +223,7 @@ const Pincode = ({
                   value={keypadMap["six"].value}
                   styleNumberFontColor={styleNumberFontColor}
                   styleNumberButtonColor={styleNumberButtonColor}
+                  styleHoverColor={styleHoverColor}
                 />
               </div>
             </div>
@@ -227,6 +234,7 @@ const Pincode = ({
                   value={keypadMap["seven"].value}
                   styleNumberFontColor={styleNumberFontColor}
                   styleNumberButtonColor={styleNumberButtonColor}
+                  styleHoverColor={styleHoverColor}
                 />
               </div>
               <div className="keypadItem">
@@ -235,6 +243,7 @@ const Pincode = ({
                   value={keypadMap["eight"].value}
                   styleNumberFontColor={styleNumberFontColor}
                   styleNumberButtonColor={styleNumberButtonColor}
+                  styleHoverColor={styleHoverColor}
                 />
               </div>
               <div className="keypadItem">
@@ -243,6 +252,7 @@ const Pincode = ({
                   value={keypadMap["nine"].value}
                   styleNumberFontColor={styleNumberFontColor}
                   styleNumberButtonColor={styleNumberButtonColor}
+                  styleHoverColor={styleHoverColor}
                 />
               </div>
             </div>
@@ -251,21 +261,23 @@ const Pincode = ({
                 <FUNC_RESET_ICON
                   resetInputValue={() => resetInputValue()}
                   resetButtonColor={styleResetButtonColor}
+                  styleHoverColor={styleHoverColor}
                 />
               </div>
               <div className="keypadItem">
                 <NumberIcon
                   pushNumber={() => pushNumber(keypadMap["zero"].value)}
                   value={keypadMap["zero"].value}
-                  numberButtonColor={styleNumberButtonColor}
                   styleNumberButtonColor={styleNumberButtonColor}
                   styleNumberFontColor={styleNumberFontColor}
+                  styleHoverColor={styleHoverColor}
                 />
               </div>
               <div className="keypadItem">
                 <FUNC_DEL_ICON
                   popNumber={() => popNumber()}
                   deleteButtonColor={styleDeleteButtonColor}
+                  styleHoverColor={styleHoverColor}
                 />
               </div>
             </div>

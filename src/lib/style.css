@@ -52,7 +52,7 @@
 }
 
 .keypadRow .keypadIcon:hover circle {
-  fill: #e0e0e0;
+  /* fill: #e0e0e0; */
 }
 
 .funcIcon {
@@ -60,7 +60,7 @@
 }
 
 .funcIcon:hover circle {
-  fill: #e0e0e0;
+  /* fill: #e0e0e0; */
 }
 
 .keypadItem.bottom {
@@ -68,7 +68,7 @@
 }
 
 .keypadItem.bottom:hover {
-  background-color: #e0e0e0;
+  /* background-color: #e0e0e0; */
   cursor: pointer;
 }
 
