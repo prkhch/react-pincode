@@ -11,87 +11,37 @@ import { ReactComponent as SEVEN_ICON } from "./icons/bottom/SEVEN_ICON.svg";
 import { ReactComponent as EIGHT_ICON } from "./icons/bottom/EIGHT_ICON.svg";
 import { ReactComponent as NINE_ICON } from "./icons/bottom/NINE_ICON.svg";
 
-const NumberIcon = (props) => {
+const NumberBottomIcon = (props) => {
   if (props.value === 0) {
-    return (
-      <ZERO_ICON
-        onClick={() => props.pushNumber()}
-        fill={props.numberButtonColor}
-      ></ZERO_ICON>
-    );
+    return <ZERO_ICON fill={props.styleNumberFontColor}></ZERO_ICON>;
   }
   if (props.value === 1) {
-    return (
-      <ONE_ICON
-        onClick={() => props.pushNumber()}
-        fill={props.numberButtonColor}
-      ></ONE_ICON>
-    );
+    return <ONE_ICON fill={props.styleNumberFontColor}></ONE_ICON>;
   }
   if (props.value === 2) {
-    return (
-      <TWO_ICON
-        onClick={() => props.pushNumber()}
-        fill={props.numberButtonColor}
-      ></TWO_ICON>
-    );
+    return <TWO_ICON fill={props.styleNumberFontColor}></TWO_ICON>;
   }
   if (props.value === 3) {
-    return (
-      <THREE_ICON
-        onClick={() => props.pushNumber()}
-        fill={props.numberButtonColor}
-      ></THREE_ICON>
-    );
+    return <THREE_ICON fill={props.styleNumberFontColor}></THREE_ICON>;
   }
   if (props.value === 4) {
-    return (
-      <FOUR_ICON
-        onClick={() => props.pushNumber()}
-        fill={props.numberButtonColor}
-      ></FOUR_ICON>
-    );
+    return <FOUR_ICON fill={props.styleNumberFontColor}></FOUR_ICON>;
   }
   if (props.value === 5) {
-    return (
-      <FIVE_ICON
-        onClick={() => props.pushNumber()}
-        fill={props.numberButtonColor}
-      ></FIVE_ICON>
-    );
+    return <FIVE_ICON fill={props.styleNumberFontColor}></FIVE_ICON>;
   }
   if (props.value === 6) {
-    return (
-      <SIX_ICON
-        onClick={() => props.pushNumber()}
-        fill={props.numberButtonColor}
-      ></SIX_ICON>
-    );
+    return <SIX_ICON fill={props.styleNumberFontColor}></SIX_ICON>;
   }
   if (props.value === 7) {
-    return (
-      <SEVEN_ICON
-        onClick={() => props.pushNumber()}
-        fill={props.numberButtonColor}
-      ></SEVEN_ICON>
-    );
+    return <SEVEN_ICON fill={props.styleNumberFontColor}></SEVEN_ICON>;
   }
   if (props.value === 8) {
-    return (
-      <EIGHT_ICON
-        onClick={() => props.pushNumber()}
-        fill={props.numberButtonColor}
-      ></EIGHT_ICON>
-    );
+    return <EIGHT_ICON fill={props.styleNumberFontColor}></EIGHT_ICON>;
   }
   if (props.value === 9) {
-    return (
-      <NINE_ICON
-        onClick={() => props.pushNumber()}
-        fill={props.numberButtonColor}
-      ></NINE_ICON>
-    );
+    return <NINE_ICON fill={props.styleNumberFontColor}></NINE_ICON>;
   }
 };
 
-export default NumberIcon;
+export default NumberBottomIcon;

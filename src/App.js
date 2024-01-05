@@ -19,17 +19,18 @@ function App() {
     <div>
       <Pincode
         onComplete={onComplete}
-        randomKeypad={true}
+        // randomKeypad={true}
         // length={6}
         defaultMessage="Enter PIN"
         // styleBottomLayout={true}
         // styleBackgroundColor="#f0f0f0"
-        // styleMessageColor="#088395"
-        // styleErrorMessageColor="#ff0000"
-        // styleInputCircleColor="#088395"
-        // styleNumberButtonColor="#ff0000"
-        // styleResetButtonColor="#088395"
-        // styleDeleteButtonColor="#088395"
+        styleMessageColor="#088395"
+        styleErrorMessageColor="#ff0000"
+        styleInputCircleColor="#088395"
+        styleNumberFontColor="#0084bc"
+        styleNumberButtonColor="#d1d3bf"
+        styleResetButtonColor="#088395"
+        styleDeleteButtonColor="#088395"
       />
     </div>
   );

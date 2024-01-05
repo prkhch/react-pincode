@@ -44,7 +44,8 @@ export default App;
 | `styleBackgroundColor`| Background color of the component            | -                | string  |
 | `styleMessageColor`   | Text color for the message                   | -                  | string  |
 | `styleErrorMessageColor` | Text color for the error message          | -                  | string  |
-| `styleInputCircleColor` | Color of the input circles                | -                  | string  |
+| `styleInputCircleColor` | Color of the input box                | -                  | string  |
+| `styleNumberFontColor` | Color of the number fonts              | -                  | string  |
 | `styleNumberButtonColor` | Color of the number buttons              | -                  | string  |
 | `styleResetButtonColor` | Color of the reset button                 | -                  | string  |
 | `styleDeleteButtonColor` | Color of the delete button              | -                  | string  
