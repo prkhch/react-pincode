@@ -2,19 +2,17 @@ import React, { useState } from "react";
 
 const NUM_TWO_ICON = (props) => {
   const [isHovered, setIsHovered] = useState(false);
-  const handleMouseEnter = () => setIsHovered(true);
-  const handleMouseLeave = () => setIsHovered(false);
   return (
     <svg
-      width="70"
-      height="70"
+      width="48"
+      height="48"
       viewBox="0 0 70 70"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className="keypadIcon"
       onClick={() => props.props.pushNumber()}
-      onMouseEnter={() => handleMouseEnter()}
-      onMouseLeave={() => handleMouseLeave()}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       <circle
         cx="35"

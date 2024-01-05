@@ -47,7 +47,7 @@
   },
   
   "keywords" : [
-    "react", "pincode", "javascript", "pin", "input", "code", "pin-input", "pin-code"
+    "react","javascript", "pincode", "pininput", "pin", "code", "input", "pin-code", "pin-input"
   ],
   "repository" : {
     "type": "git",

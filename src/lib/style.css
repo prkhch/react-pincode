@@ -10,85 +10,85 @@
   -ms-use-select: none;
   user-select: none;
 }
-
+.messageBox {
+}
+.errorBox {
+}
+.inputBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 3px;
+}
 .keypadBox {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 50%;
   gap: 2px;
 }
-
-.keypadBoxBottom {
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-  gap: 2px;
-}
-
 .keypadRow {
   display: flex;
   justify-content: space-around;
   height: 15vh;
 }
-
-.keypadRowBottom {
-  border: 1px rgba(255,255,255,0.5) solid;
-  display: flex;
-  justify-content: space-around;
-  height: 10vh;
-  gap:2px;
-}
-
 .keypadItem {
   width: 100%; 
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin:5px;
 }
-
 .keypadIcon {
   cursor: pointer;
 }
-
-.keypadRow .keypadIcon:hover circle {
-  /* fill: #e0e0e0; */
-}
-
 .funcIcon {
   cursor: pointer;
 }
 
-.funcIcon:hover circle {
-  /* fill: #e0e0e0; */
+/* BottomLayout */
+.containerBottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-use-select: none;
+  user-select: none;
 }
-
-.keypadItem.bottom {
-  border: 1px #e0e0e0 solid;
+.messageBoxBottom {
+  padding-top: 5%;
 }
-
-.keypadItem.bottom:hover {
-  /* background-color: #e0e0e0; */
-  cursor: pointer;
+.errorBoxBottom {
+  padding-top: 5%;
 }
-
-.messageBox {
+.keypadBoxBottom {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1px;
 }
-
-.errorBox {
+.keypadRowBottom {
+  display: flex;
+  justify-content: space-around;
+  gap: 1px;
+  box-sizing: border-box;
+  border: 1px rgba(255,255,255,0.5) solid;
 }
-
-.inputBox {
+.keypadItemBottom {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80%;
-  height: 10vh;
-  gap: 2px;
+  width: 100%; 
+  box-sizing: border-box;
+  border: 1px #e0e0e0 solid;
 }
-
-.inputBox.bottom {
-  height: 20vh;
+.keypadItemBottom:hover {
+  cursor: pointer;
 }
 
 /* Animation */

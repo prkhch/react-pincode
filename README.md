@@ -25,7 +25,24 @@ function App() {
 
   return (
     <div>
-      <Pincode onComplete={onComplete} />
+      <Pincode
+        onComplete={onComplete}
+        // randomKeypad={true}
+        length={4}
+        defaultMessage="Enter PIN"
+        // styleBottomLayout={true}
+        styleBackgroundColor="#ffffff"
+        styleBackgroundOpacity={1}
+        styleMessageColor="#000000"
+        styleErrorMessageColor="#ff0000"
+        styleInputBoxColor="#efefef"
+        styleInputCircleColor="#000000"
+        styleNumberFontColor="#000000"
+        styleNumberButtonColor="#efefef"
+        styleResetButtonColor="#000000"
+        styleDeleteButtonColor="#000000"
+        styleHoverColor="#bbbbbb"
+      />
     </div>
   );
 }
@@ -36,19 +53,30 @@ export default App;
 ###### \* : Required
 | Name              | Description                                  | Default            | Type    |
 |-----------------------|----------------------------------------------|--------------------|---------|
-| *`onComplete`         | Callback function when input is complete     | -                  | function |
+| *`onComplete`         | Callback function when input is complete    | -                  | function |
 | `randomKeypad`        | Randomizes the number pad                    | false           | boolean |
-| `length`              | Length of the password                       | 4 (min:4, max:8)  | number  |
+| `length`              | Length of the password                       | 4 (4~8)  | number  |
 | `defaultMessage`      | Default message displayed                    | -                  | string  |
 | `styleBottomLayout`   | Enable/disable bottom layout style           | false           | boolean |
 | `styleBackgroundColor`| Background color of the component            | -                | string  |
+| `styleBackgroundOpacity`| Opacity of the background            | 1 (0~1)               | number  |
 | `styleMessageColor`   | Text color for the message                   | -                  | string  |
 | `styleErrorMessageColor` | Text color for the error message          | -                  | string  |
-| `styleInputCircleColor` | Color of the input box                | -                  | string  |
+| `styleInputBoxColor` | Color of the input box                | -                  | string  |
+| `styleInputCircleColor` | Color of the input circles                | -                  | string  |
 | `styleNumberFontColor` | Color of the number fonts              | -                  | string  |
 | `styleNumberButtonColor` | Color of the number buttons              | -                  | string  |
 | `styleResetButtonColor` | Color of the reset button                 | -                  | string  |
 | `styleDeleteButtonColor` | Color of the delete button              | -                  | string  
+| `styleHoverColor` | Hover color for the buttons              | -                  | string  
+
+### `onComplete` Function
+---
+- `inputValue`: The PIN entered by the user.
+- `setMessage`: Function to display a message.
+- `setErrorMessage`: Function to display an error message.
+
+The `onComplete` function is called when the user finishes entering their PIN. It checks the PIN and shows a message based on whether the PIN is correct or not.
 
 ## Example
 |Default|Bottom Layout|

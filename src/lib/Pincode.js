@@ -13,6 +13,7 @@ const Pincode = ({
   defaultMessage,
   styleBottomLayout,
   styleBackgroundColor,
+  styleBackgroundOpacity,
   styleMessageColor,
   styleErrorMessageColor,
   styleInputBoxColor,
@@ -129,44 +130,68 @@ const Pincode = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // input box
   const circle_empty_arr = [...Array(lengthValue - inputValue.length)];
   const circle_fill_arr = [...Array(inputValue.length)];
 
+  // bottom layout hover
+  const [HoverOne, setHoverOne] = useState(false);
+  const [HoverTwo, setHoverTwo] = useState(false);
+  const [HoverThree, setHoverThree] = useState(false);
+  const [HoverFour, setHoverFour] = useState(false);
+  const [HoverFive, setHoverFive] = useState(false);
+  const [HoverSix, setHoverSix] = useState(false);
+  const [HoverSeven, setHoverSeven] = useState(false);
+  const [HoverEight, setHoverEight] = useState(false);
+  const [HoverNine, setHoverNine] = useState(false);
+  const [HoverZero, setHoverZero] = useState(false);
+  const [HoverRe, setHoverRe] = useState(false);
+  const [HoverDel, setHoverDel] = useState(false);
+
   return (
-    <div
-      className="container fadeIn"
-      style={{ backgroundColor: styleBackgroundColor }}
-    >
-      {!errorMessage && (
-        <div className="messageBox fadeIn" style={{ color: styleMessageColor }}>
-          {message}
-        </div>
-      )}
-      {errorMessage && (
+    <>
+      {!styleBottomLayout && (
         <div
-          className="errorBox shake fadeIn"
-          style={{ color: styleErrorMessageColor }}
+          className="container bottom fadeIn"
+          style={{
+            backgroundColor: styleBackgroundColor,
+            opacity: styleBackgroundOpacity,
+          }}
         >
-          {errorMessage}
-        </div>
-      )}
+          {!errorMessage && (
+            <div
+              className="messageBox fadeIn"
+              style={{ color: styleMessageColor }}
+            >
+              {message}
+            </div>
+          )}
+          {errorMessage && (
+            <div
+              className="errorBox shake fadeIn"
+              style={{ color: styleErrorMessageColor }}
+            >
+              {errorMessage}
+            </div>
+          )}
 
-      <div className={styleBottomLayout ? "inputBox bottom" : "inputBox"}>
-        {circle_fill_arr.map((_, idx) => (
-          <INPUT_FILL_ICON
-            key={idx}
-            styleInputCircleColor={styleInputCircleColor}
-            styleInputBoxColor={styleInputBoxColor}
-          />
-        ))}
-        {circle_empty_arr.map((_, idx) => (
-          <INPUT_EMPTY_ICON key={idx} styleInputBoxColor={styleInputBoxColor} />
-        ))}
-      </div>
+          <div className="inputBox">
+            {circle_fill_arr.map((_, idx) => (
+              <INPUT_FILL_ICON
+                key={idx}
+                styleInputCircleColor={styleInputCircleColor}
+                styleInputBoxColor={styleInputBoxColor}
+              />
+            ))}
+            {circle_empty_arr.map((_, idx) => (
+              <INPUT_EMPTY_ICON
+                key={idx}
+                styleInputBoxColor={styleInputBoxColor}
+              />
+            ))}
+          </div>
 
-      <div className="keypadBox">
-        {!styleBottomLayout && (
-          <>
+          <div className="keypadBox">
             <div className="keypadRow">
               <div className="keypadItem">
                 <NumberIcon
@@ -281,17 +306,58 @@ const Pincode = ({
                 />
               </div>
             </div>
-          </>
-        )}
-      </div>
+          </div>
+        </div>
+      )}
 
-      <div className="keypadBoxBottom">
-        {styleBottomLayout && (
-          <>
+      {styleBottomLayout && (
+        <div
+          className="containerBottom fadeIn"
+          style={{
+            backgroundColor: styleBackgroundColor,
+            opacity: styleBackgroundOpacity,
+          }}
+        >
+          {!errorMessage && (
+            <div
+              className="messageBoxBottom fadeIn"
+              style={{ color: styleMessageColor }}
+            >
+              {message}
+            </div>
+          )}
+          {errorMessage && (
+            <div
+              className="errorBoxBottom shake fadeIn"
+              style={{ color: styleErrorMessageColor }}
+            >
+              {errorMessage}
+            </div>
+          )}
+
+          <div className="inputBox">
+            {circle_fill_arr.map((_, idx) => (
+              <INPUT_FILL_ICON
+                key={idx}
+                styleInputCircleColor={styleInputCircleColor}
+                styleInputBoxColor={styleInputBoxColor}
+              />
+            ))}
+            {circle_empty_arr.map((_, idx) => (
+              <INPUT_EMPTY_ICON
+                key={idx}
+                styleInputBoxColor={styleInputBoxColor}
+              />
+            ))}
+          </div>
+          <div className="keypadBoxBottom">
             <div className="keypadRowBottom">
               <div
-                className="keypadItem bottom"
+                className="keypadItemBottom"
                 onClick={() => pushNumber(keypadMap["one"].value)}
+                onMouseEnter={() => setHoverOne(true)}
+                onMouseLeave={() => setHoverOne(false)}
+                style={HoverOne ? { backgroundColor: styleHoverColor } : {}}
               >
                 <NumberIcon
                   value={keypadMap["one"].value}
@@ -300,8 +366,11 @@ const Pincode = ({
                 />
               </div>
               <div
-                className="keypadItem bottom"
+                className="keypadItemBottom"
                 onClick={() => pushNumber(keypadMap["two"].value)}
+                onMouseEnter={() => setHoverTwo(true)}
+                onMouseLeave={() => setHoverTwo(false)}
+                style={HoverTwo ? { backgroundColor: styleHoverColor } : {}}
               >
                 <NumberIcon
                   value={keypadMap["two"].value}
@@ -310,8 +379,11 @@ const Pincode = ({
                 />
               </div>
               <div
-                className="keypadItem bottom"
+                className="keypadItemBottom"
                 onClick={() => pushNumber(keypadMap["three"].value)}
+                onMouseEnter={() => setHoverThree(true)}
+                onMouseLeave={() => setHoverThree(false)}
+                style={HoverThree ? { backgroundColor: styleHoverColor } : {}}
               >
                 <NumberIcon
                   value={keypadMap["three"].value}
@@ -320,8 +392,11 @@ const Pincode = ({
                 />
               </div>
               <div
-                className="keypadItem bottom"
+                className="keypadItemBottom"
                 onClick={() => pushNumber(keypadMap["four"].value)}
+                onMouseEnter={() => setHoverFour(true)}
+                onMouseLeave={() => setHoverFour(false)}
+                style={HoverFour ? { backgroundColor: styleHoverColor } : {}}
               >
                 <NumberIcon
                   value={keypadMap["four"].value}
@@ -330,8 +405,11 @@ const Pincode = ({
                 />
               </div>
               <div
-                className="keypadItem bottom"
+                className="keypadItemBottom"
                 onClick={() => pushNumber(keypadMap["five"].value)}
+                onMouseEnter={() => setHoverFive(true)}
+                onMouseLeave={() => setHoverFive(false)}
+                style={HoverFive ? { backgroundColor: styleHoverColor } : {}}
               >
                 <NumberIcon
                   value={keypadMap["five"].value}
@@ -340,8 +418,11 @@ const Pincode = ({
                 />
               </div>
               <div
-                className="keypadItem bottom"
+                className="keypadItemBottom"
                 onClick={() => resetInputValue()}
+                onMouseEnter={() => setHoverRe(true)}
+                onMouseLeave={() => setHoverRe(false)}
+                style={HoverRe ? { backgroundColor: styleHoverColor } : {}}
               >
                 <FUNC_RESET_ICON
                   resetInputValue={() => {}}
@@ -352,8 +433,11 @@ const Pincode = ({
             </div>
             <div className="keypadRowBottom">
               <div
-                className="keypadItem bottom"
+                className="keypadItemBottom"
                 onClick={() => pushNumber(keypadMap["six"].value)}
+                onMouseEnter={() => setHoverSix(true)}
+                onMouseLeave={() => setHoverSix(false)}
+                style={HoverSix ? { backgroundColor: styleHoverColor } : {}}
               >
                 <NumberIcon
                   value={keypadMap["six"].value}
@@ -362,8 +446,11 @@ const Pincode = ({
                 />
               </div>
               <div
-                className="keypadItem bottom"
+                className="keypadItemBottom"
                 onClick={() => pushNumber(keypadMap["seven"].value)}
+                onMouseEnter={() => setHoverSeven(true)}
+                onMouseLeave={() => setHoverSeven(false)}
+                style={HoverSeven ? { backgroundColor: styleHoverColor } : {}}
               >
                 <NumberIcon
                   value={keypadMap["seven"].value}
@@ -372,8 +459,11 @@ const Pincode = ({
                 />
               </div>
               <div
-                className="keypadItem bottom"
+                className="keypadItemBottom"
                 onClick={() => pushNumber(keypadMap["eight"].value)}
+                onMouseEnter={() => setHoverEight(true)}
+                onMouseLeave={() => setHoverEight(false)}
+                style={HoverEight ? { backgroundColor: styleHoverColor } : {}}
               >
                 <NumberIcon
                   value={keypadMap["eight"].value}
@@ -382,8 +472,11 @@ const Pincode = ({
                 />
               </div>
               <div
-                className="keypadItem bottom"
+                className="keypadItemBottom"
                 onClick={() => pushNumber(keypadMap["nine"].value)}
+                onMouseEnter={() => setHoverNine(true)}
+                onMouseLeave={() => setHoverNine(false)}
+                style={HoverNine ? { backgroundColor: styleHoverColor } : {}}
               >
                 <NumberIcon
                   value={keypadMap["nine"].value}
@@ -392,8 +485,11 @@ const Pincode = ({
                 />
               </div>
               <div
-                className="keypadItem bottom"
+                className="keypadItemBottom"
                 onClick={() => pushNumber(keypadMap["zero"].value)}
+                onMouseEnter={() => setHoverZero(true)}
+                onMouseLeave={() => setHoverZero(false)}
+                style={HoverZero ? { backgroundColor: styleHoverColor } : {}}
               >
                 <NumberIcon
                   value={keypadMap["zero"].value}
@@ -401,7 +497,13 @@ const Pincode = ({
                   pushNumber={() => {}}
                 />
               </div>
-              <div className="keypadItem bottom" onClick={() => popNumber()}>
+              <div
+                className="keypadItemBottom"
+                onClick={() => popNumber()}
+                onMouseEnter={() => setHoverDel(true)}
+                onMouseLeave={() => setHoverDel(false)}
+                style={HoverDel ? { backgroundColor: styleHoverColor } : {}}
+              >
                 <FUNC_DEL_ICON
                   popNumber={() => {}}
                   deleteButtonColor={styleDeleteButtonColor}
@@ -409,10 +511,10 @@ const Pincode = ({
                 />
               </div>
             </div>
-          </>
-        )}
-      </div>
-    </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
