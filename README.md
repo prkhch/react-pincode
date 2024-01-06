@@ -8,8 +8,14 @@ npm install @prkhch/react-pincode
 ```
 import { Pincode } from "@prkhch/react-pincode";
 
+export interface ON_COMPLETE_PROPS {
+  inputValue: string;
+  setMessage: (value: string | undefined) => void;
+  setErrorMessage: (value: string | undefined) => void;
+}
+
 function App() {
-  const onComplete = ({ inputValue, setMessage, setErrorMessage }) => {
+  const onComplete = ({ inputValue, setMessage, setErrorMessage }: ON_COMPLETE_PROPS) => {
     // Request correct password from the server.
     // Example correct password : 0000
     if (inputValue === "0000") {
@@ -42,6 +48,7 @@ function App() {
         styleResetButtonColor="#000000"
         styleDeleteButtonColor="#000000"
         styleHoverColor="#bbbbbb"
+        style={{ width: "100%", position: "fixed", top: 0, zIndex: 1 }}
       />
     </div>
   );
@@ -69,6 +76,7 @@ export default App;
 | `styleResetButtonColor` | Color of the reset button                 | -                  | string  |
 | `styleDeleteButtonColor` | Color of the delete button              | -                  | string  
 | `styleHoverColor` | Hover color for the buttons              | -                  | string  
+| `style` | Inline style              | -                  | React.CSSProperties  
 
 ### `onComplete` Function
 - *`inputValue`: The PIN entered by the user.
