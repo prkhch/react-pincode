@@ -48,7 +48,7 @@ function App() {
         styleResetButtonColor="#000000"
         styleDeleteButtonColor="#000000"
         styleHoverColor="#bbbbbb"
-        style={{ width: "100%", position: "fixed", top: 0, zIndex: 1 }}
+        style={{ width: "100%" }}
       />
     </div>
   );
